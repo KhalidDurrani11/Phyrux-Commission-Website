@@ -17,7 +17,7 @@ const navLinks = [
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const linkClasses = "relative font-mono uppercase tracking-widest text-sm text-gray-300 hover:text-brand-blue transition-colors duration-300 px-2 py-1";
+  const linkClasses = "relative font-mono uppercase tracking-widest text-sm text-brand-light/90 hover:text-brand-blue transition-colors duration-300 px-2 py-1";
   const activeLinkClasses = "text-brand-blue";
 
   return (
@@ -64,7 +64,7 @@ const Header: React.FC = () => {
           ))}
         </nav>
         <div className="md:hidden">
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-gray-300 hover:text-brand-blue transition-colors">
+            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-brand-light hover:text-brand-blue transition-colors">
                 {isMenuOpen ? <X size={32} /> : <List size={32} />}
             </button>
         </div>

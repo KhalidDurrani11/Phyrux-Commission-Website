@@ -10,10 +10,12 @@
         theme: {
           extend: {
             colors: {
-              'brand-blue': '#00f0ff',
-              'brand-red': '#ff003c',
-              'brand-dark': '#0a0a0a',
-              'brand-gray': '#1a1a1a',
+              'brand-blue': '#3B82F6',   // Electric Blue
+              'brand-purple': '#8B5CF6', // Neon Purple
+              'brand-teal': '#14B8A6',   // Cyan Teal
+              'brand-light': '#D1D5DB',  // Silver Grey
+              'brand-gray': '#1E1E1E',   // Deep Charcoal
+              'brand-dark': '#111111',   // Near Black
             },
             fontFamily: {
               'sans': ['Inter', 'sans-serif'],
@@ -23,7 +25,7 @@
               'fade-in': 'fadeIn 0.5s ease-in-out',
               'slide-up': 'slideUp 0.5s ease-in-out',
               'glow': 'glow 2s ease-in-out infinite alternate',
-              'glow-red': 'glowRed 2s ease-in-out infinite alternate',
+              'glow-purple': 'glowPurple 2s ease-in-out infinite alternate',
               'glitch': 'glitch 0.5s linear infinite',
               'text-focus': 'textFocus 1.5s ease-out',
               'spin': 'spin 1s linear infinite',
@@ -32,12 +34,12 @@
               fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
               slideUp: { '0%': { transform: 'translateY(20px)', opacity: '0' }, '100%': { transform: 'translateY(0)', opacity: '1' } },
               glow: {
-                'from': { textShadow: '0 0 10px #00f0ff, 0 0 20px #00f0ff, 0 0 30px #00f0ff' },
-                'to': { textShadow: '0 0 20px #00f0ff, 0 0 30px #00f0ff, 0 0 40px #00f0ff' },
+                'from': { textShadow: '0 0 10px #3B82F6, 0 0 20px #3B82F6' },
+                'to': { textShadow: '0 0 20px #3B82F6, 0 0 30px #3B82F6' },
               },
-              glowRed: {
-                'from': { textShadow: '0 0 8px rgba(255, 0, 60, 0.7), 0 0 16px rgba(255, 0, 60, 0.5)' },
-                'to': { textShadow: '0 0 16px rgba(255, 0, 60, 0.7), 0 0 24px rgba(255, 0, 60, 0.5)' },
+              glowPurple: {
+                'from': { textShadow: '0 0 8px rgba(139, 92, 246, 0.7), 0 0 16px rgba(139, 92, 246, 0.5)' },
+                'to': { textShadow: '0 0 16px rgba(139, 92, 246, 0.7), 0 0 24px rgba(139, 92, 246, 0.5)' },
               },
               glitch: {
                 '0%, 100%': { clipPath: 'inset(0 0 0 0)' },
@@ -89,8 +91,8 @@
     width: 100%;
     height: 100%;
     background-image:
-      linear-gradient(to right, #80808012 1px, transparent 1px),
-      linear-gradient(to bottom, #80808012 1px, transparent 1px);
+      linear-gradient(to right, rgba(209, 213, 219, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(209, 213, 219, 0.05) 1px, transparent 1px);
     background-size: 3rem 3rem;
     z-index: -1;
     pointer-events: none;
@@ -114,7 +116,7 @@
   }
 </style>
 </head>
-<body class="bg-brand-dark text-gray-200 font-sans overflow-x-hidden">
+<body class="bg-brand-dark text-brand-light font-sans overflow-x-hidden">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
 </body>

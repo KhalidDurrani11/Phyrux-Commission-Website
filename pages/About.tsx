@@ -18,7 +18,7 @@ const About: React.FC = () => {
           className="text-center mb-16"
         >
           <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter">Our Story</h1>
-          <p className="mt-4 max-w-3xl mx-auto text-gray-400">
+          <p className="mt-4 max-w-3xl mx-auto text-brand-light/70">
             Born from a shared passion for gaming culture and cutting-edge design, Phyrux Commissions is more than a studio—it's an arsenal of creativity. We arm brands with the visual power to dominate their digital landscapes.
           </p>
         </motion.div>

@@ -28,7 +28,7 @@ const ServiceCard: React.FC<{ service: Service }> = ({ service }) => {
             ref={ref}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
-            className="relative p-8 h-full bg-brand-gray border border-gray-800 rounded-lg shadow-lg overflow-hidden group"
+            className="relative p-8 h-full bg-brand-gray border border-brand-gray/50 rounded-lg shadow-lg overflow-hidden group"
             style={{ transition: 'transform 0.2s cubic-bezier(0.23, 1, 0.32, 1)' }}
         >
             <div className="absolute inset-0 bg-gradient-to-br from-brand-blue/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -38,8 +38,8 @@ const ServiceCard: React.FC<{ service: Service }> = ({ service }) => {
                 <div className="mb-4">
                     <service.icon size={48} className="text-brand-blue drop-shadow-[0_0_8px_var(--tw-shadow-color)] shadow-brand-blue" />
                 </div>
-                <h3 className="text-2xl font-bold uppercase tracking-wide text-white">{service.title}</h3>
-                <p className="mt-2 text-gray-400">{service.description}</p>
+                <h3 className="text-2xl font-bold uppercase tracking-wide text-brand-light">{service.title}</h3>
+                <p className="mt-2 text-brand-light/70">{service.description}</p>
             </div>
         </motion.div>
     );

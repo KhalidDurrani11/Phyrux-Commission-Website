@@ -1,4 +1,4 @@
-import type { Service, PortfolioItem, TimelineEvent, SocialLink } from './types';
+import type { Service, PortfolioItem, TimelineEvent, SocialLink, Testimonial } from './types';
 import { PenNib, Code, FilmSlate, SquaresFour, Image, Scissors, TwitterLogo, YoutubeLogo, InstagramLogo, TwitchLogo } from '@phosphor-icons/react';
 
 export const SERVICES: Service[] = [
@@ -52,10 +52,27 @@ export const TIMELINE_EVENTS: TimelineEvent[] = [
     { year: '2024', title: 'Future Forged', description: 'Launched our new brand identity and futuristic website, marking a new era of high-end creative solutions.' },
 ];
 
-
 export const SOCIAL_LINKS: SocialLink[] = [
     { icon: TwitterLogo, url: '#', name: 'Twitter' },
     { icon: InstagramLogo, url: '#', name: 'Instagram' },
     { icon: YoutubeLogo, url: '#', name: 'YouTube' },
     { icon: TwitchLogo, url: '#', name: 'Twitch' },
+];
+
+export const TESTIMONIALS: Testimonial[] = [
+  {
+    quote: "Phyrux didn't just design a website; they engineered a digital experience. The results were beyond our expectations. Truly next-level.",
+    author: "Alex Thorne",
+    company: "CEO, Nexus Dynamics",
+  },
+  {
+    quote: "The branding and video work they delivered gave our launch the exact high-impact, futuristic feel we were aiming for. Unmatched creativity.",
+    author: "Samantha Rix",
+    company: "Marketing Director, Cygnus Entertainment",
+  },
+  {
+    quote: "Working with them was seamless. They understood the vision for our game's art instantly and delivered assets that were both beautiful and functional.",
+    author: "Kenji Tanaka",
+    company: "Lead Developer, Ghost Pixel Games",
+  },
 ];

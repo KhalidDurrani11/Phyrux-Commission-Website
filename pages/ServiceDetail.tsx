@@ -20,8 +20,8 @@ const ServiceDetail: React.FC = () => {
         return (
             <AnimatedPage>
                 <div className="container mx-auto py-16 px-4 sm:px-8 text-center">
-                    <h1 className="text-4xl font-bold text-brand-red">Error</h1>
-                    <p className="text-gray-400 mt-4">Service slug is missing.</p>
+                    <h1 className="text-4xl font-bold text-brand-purple">Error</h1>
+                    <p className="text-brand-light/70 mt-4">Service slug is missing.</p>
                 </div>
             </AnimatedPage>
         );
@@ -35,9 +35,9 @@ const ServiceDetail: React.FC = () => {
         return (
             <AnimatedPage>
                 <div className="container mx-auto py-16 px-4 sm:px-8 text-center">
-                    <h1 className="text-4xl font-bold text-brand-red">Service Not Found</h1>
-                    <p className="text-gray-400 mt-4">The service you're looking for doesn't exist.</p>
-                    <Link to="/services" className="mt-8 inline-flex items-center gap-2 font-mono text-lg uppercase tracking-widest text-gray-300 hover:text-brand-blue transition-colors duration-300 group">
+                    <h1 className="text-4xl font-bold text-brand-purple">Service Not Found</h1>
+                    <p className="text-brand-light/70 mt-4">The service you're looking for doesn't exist.</p>
+                    <Link to="/services" className="mt-8 inline-flex items-center gap-2 font-mono text-lg uppercase tracking-widest text-brand-light/90 hover:text-brand-blue transition-colors duration-300 group">
                         <ArrowLeft size={22} /> Back to Services
                     </Link>
                 </div>
@@ -54,11 +54,11 @@ const ServiceDetail: React.FC = () => {
                     transition={{ duration: 0.5 }}
                     className="text-center mb-12"
                 >
-                    <Link to="/services" className="mb-4 inline-flex items-center gap-2 font-mono uppercase tracking-widest text-sm text-gray-400 hover:text-brand-blue transition-colors duration-300 group">
+                    <Link to="/services" className="mb-4 inline-flex items-center gap-2 font-mono uppercase tracking-widest text-sm text-brand-light/70 hover:text-brand-blue transition-colors duration-300 group">
                         <ArrowLeft size={18} className="transition-transform duration-300 group-hover:-translate-x-1" /> All Services
                     </Link>
                     <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter">{service.title}</h1>
-                    <p className="mt-4 max-w-2xl mx-auto text-gray-400">{service.description}</p>
+                    <p className="mt-4 max-w-2xl mx-auto text-brand-light/70">{service.description}</p>
                 </motion.div>
                 
                 {relatedPortfolioItems.length > 0 ? (
@@ -72,7 +72,7 @@ const ServiceDetail: React.FC = () => {
                     </motion.div>
                 ) : (
                     <div className="text-center py-12">
-                        <p className="text-gray-500 font-mono">No portfolio items found for this service yet. Stay tuned!</p>
+                        <p className="text-brand-light/50 font-mono">No portfolio items found for this service yet. Stay tuned!</p>
                     </div>
                 )}
             </div>

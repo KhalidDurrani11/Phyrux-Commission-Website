@@ -10,7 +10,7 @@ const Logo: React.FC = () => {
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="transition-all duration-500 group-hover:drop-shadow-[0_0_5px_#ff003c] group-hover:scale-110"
+        className="transition-all duration-500 group-hover:drop-shadow-[0_0_5px_#8B5CF6] group-hover:scale-110"
       >
         <defs>
           <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -19,8 +19,8 @@ const Logo: React.FC = () => {
             <stop offset="100%" stopColor="#444" />
           </linearGradient>
           <linearGradient id="logoAccent" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#ff003c" />
-            <stop offset="100%" stopColor="#a00020" />
+            <stop offset="0%" stopColor="#8B5CF6" />
+            <stop offset="100%" stopColor="#5B21B6" />
           </linearGradient>
         </defs>
         <path
@@ -45,7 +45,7 @@ const Logo: React.FC = () => {
           strokeWidth="1.5"
         />
       </svg>
-      <span className="font-black text-xl tracking-wider uppercase text-gray-300 group-hover:text-white transition-colors duration-300">
+      <span className="font-black text-xl tracking-wider uppercase text-brand-light group-hover:text-white transition-colors duration-300">
         Phyrux
       </span>
     </div>

@@ -25,13 +25,13 @@ const PortfolioItem: React.FC<{ item: PortfolioItemType }> = ({ item }) => {
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
             <div className="absolute bottom-0 left-0 p-4 w-full">
                 <motion.div 
-                    className="absolute inset-0 bg-brand-red opacity-0 group-hover:opacity-10 transition-opacity duration-300"
+                    className="absolute inset-0 bg-brand-purple opacity-0 group-hover:opacity-10 transition-opacity duration-300"
                     style={{ clipPath: 'polygon(0 0, 0% 100%, 0 100%)' }}
                     whileHover={{ clipPath: 'polygon(0 0, 100% 100%, 0 100%)' }}
                     transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                  />
-                <p className="text-xs font-mono uppercase tracking-widest text-brand-red">{item.category}</p>
-                <h3 className="text-lg font-bold text-white truncate">{item.title}</h3>
+                <p className="text-xs font-mono uppercase tracking-widest text-brand-purple">{item.category}</p>
+                <h3 className="text-lg font-bold text-brand-light truncate">{item.title}</h3>
             </div>
         </motion.div>
     );

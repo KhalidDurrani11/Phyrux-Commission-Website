@@ -1,4 +1,3 @@
-
 import type { Icon } from '@phosphor-icons/react';
 
 export interface Service {
@@ -24,4 +23,10 @@ export interface SocialLink {
   icon: Icon;
   url: string;
   name: string;
+}
+
+export interface Testimonial {
+  quote: string;
+  author: string;
+  company: string;
 }
