@@ -1,11 +1,10 @@
-
 import React from 'react';
 import { SOCIAL_LINKS } from '../constants';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-brand-dark border-t border-brand-gray/50 py-8 px-4 sm:px-8">
-      <div className="container mx-auto text-center text-brand-light/60">
+    <footer className="bg-white dark:bg-brand-dark border-t border-gray-200 dark:border-brand-gray/50 py-8 px-4 sm:px-8">
+      <div className="container mx-auto text-center text-brand-dark/60 dark:text-brand-light/60">
         <div className="flex justify-center space-x-6 mb-4">
           {SOCIAL_LINKS.map((link) => (
             <a
@@ -14,7 +13,7 @@ const Footer: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={link.name}
-              className="text-brand-light/80 hover:text-brand-purple transition-all duration-300 hover:scale-110 transform hover:drop-shadow-[0_0_8px_var(--tw-shadow-color)] shadow-brand-purple"
+              className="text-brand-dark/80 dark:text-brand-light/80 hover:text-brand-purple transition-all duration-300 hover:scale-110 transform hover:drop-shadow-[0_0_8px_var(--tw-shadow-color)] shadow-brand-purple"
             >
               <link.icon size={28} weight="light" />
             </a>

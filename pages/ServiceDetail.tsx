@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import AnimatedPage from '../components/AnimatedPage';
@@ -21,7 +20,7 @@ const ServiceDetail: React.FC = () => {
             <AnimatedPage>
                 <div className="container mx-auto py-16 px-4 sm:px-8 text-center">
                     <h1 className="text-4xl font-bold text-brand-purple">Error</h1>
-                    <p className="text-brand-light/70 mt-4">Service slug is missing.</p>
+                    <p className="text-brand-dark/70 dark:text-brand-light/70 mt-4">Service slug is missing.</p>
                 </div>
             </AnimatedPage>
         );
@@ -36,8 +35,8 @@ const ServiceDetail: React.FC = () => {
             <AnimatedPage>
                 <div className="container mx-auto py-16 px-4 sm:px-8 text-center">
                     <h1 className="text-4xl font-bold text-brand-purple">Service Not Found</h1>
-                    <p className="text-brand-light/70 mt-4">The service you're looking for doesn't exist.</p>
-                    <Link to="/services" className="mt-8 inline-flex items-center gap-2 font-mono text-lg uppercase tracking-widest text-brand-light/90 hover:text-brand-blue transition-colors duration-300 group">
+                    <p className="text-brand-dark/70 dark:text-brand-light/70 mt-4">The service you're looking for doesn't exist.</p>
+                    <Link to="/services" className="mt-8 inline-flex items-center gap-2 font-mono text-lg uppercase tracking-widest text-brand-dark/90 dark:text-brand-light/90 hover:text-brand-blue transition-colors duration-300 group">
                         <ArrowLeft size={22} /> Back to Services
                     </Link>
                 </div>
@@ -54,11 +53,11 @@ const ServiceDetail: React.FC = () => {
                     transition={{ duration: 0.5 }}
                     className="text-center mb-12"
                 >
-                    <Link to="/services" className="mb-4 inline-flex items-center gap-2 font-mono uppercase tracking-widest text-sm text-brand-light/70 hover:text-brand-blue transition-colors duration-300 group">
+                    <Link to="/services" className="mb-4 inline-flex items-center gap-2 font-mono uppercase tracking-widest text-sm text-brand-dark/70 dark:text-brand-light/70 hover:text-brand-blue transition-colors duration-300 group">
                         <ArrowLeft size={18} className="transition-transform duration-300 group-hover:-translate-x-1" /> All Services
                     </Link>
                     <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter">{service.title}</h1>
-                    <p className="mt-4 max-w-2xl mx-auto text-brand-light/70">{service.description}</p>
+                    <p className="mt-4 max-w-2xl mx-auto text-brand-dark/70 dark:text-brand-light/70">{service.description}</p>
                 </motion.div>
                 
                 {relatedPortfolioItems.length > 0 ? (
@@ -72,7 +71,7 @@ const ServiceDetail: React.FC = () => {
                     </motion.div>
                 ) : (
                     <div className="text-center py-12">
-                        <p className="text-brand-light/50 font-mono">No portfolio items found for this service yet. Stay tuned!</p>
+                        <p className="font-mono text-brand-dark/50 dark:text-brand-light/50">No portfolio items found for this service yet. Stay tuned!</p>
                     </div>
                 )}
             </div>

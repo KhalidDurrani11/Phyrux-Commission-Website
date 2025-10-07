@@ -15,14 +15,14 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial, index })
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.5, delay: index * 0.15 }}
-      className="relative p-8 h-full bg-brand-gray border border-brand-gray/60 rounded-lg shadow-lg flex flex-col"
+      className="relative p-8 h-full bg-white dark:bg-brand-gray border border-gray-200 dark:border-brand-gray/60 rounded-lg shadow-lg flex flex-col"
     >
-        <Quotes size={40} className="text-brand-purple/50 absolute top-4 right-4" weight="fill" />
+        <Quotes size={40} className="text-brand-purple/30 dark:text-brand-purple/50 absolute top-4 right-4" weight="fill" />
         <div className="flex-grow">
-            <p className="text-brand-light/90 italic">"{testimonial.quote}"</p>
+            <p className="text-brand-dark/90 dark:text-brand-light/90 italic">"{testimonial.quote}"</p>
         </div>
-        <div className="mt-6 border-t border-brand-gray/50 pt-4">
-            <p className="font-bold text-brand-light uppercase tracking-wider">{testimonial.author}</p>
+        <div className="mt-6 border-t border-gray-200 dark:border-brand-gray/50 pt-4">
+            <p className="font-bold text-brand-dark dark:text-brand-light uppercase tracking-wider">{testimonial.author}</p>
             <p className="text-sm text-brand-purple font-mono">{testimonial.company}</p>
         </div>
     </motion.div>

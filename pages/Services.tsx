@@ -1,4 +1,3 @@
-
 import React from 'react';
 import AnimatedPage from '../components/AnimatedPage';
 import { SERVICES } from '../constants';
@@ -21,7 +20,7 @@ const Services: React.FC = () => {
             className="text-center mb-12"
         >
           <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter">Our Arsenal</h1>
-          <p className="mt-4 max-w-2xl mx-auto text-brand-light/70">We wield a diverse set of creative tools to execute any mission with precision and flair.</p>
+          <p className="mt-4 max-w-2xl mx-auto text-brand-dark/70 dark:text-brand-light/70">We wield a diverse set of creative tools to execute any mission with precision and flair.</p>
         </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {SERVICES.map((service, index) => (

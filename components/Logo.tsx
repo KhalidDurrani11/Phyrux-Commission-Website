@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const Logo: React.FC = () => {
@@ -45,7 +44,7 @@ const Logo: React.FC = () => {
           strokeWidth="1.5"
         />
       </svg>
-      <span className="font-black text-xl tracking-wider uppercase text-brand-light group-hover:text-white transition-colors duration-300">
+      <span className="font-black text-xl tracking-wider uppercase text-brand-dark dark:text-brand-light group-hover:text-black dark:group-hover:text-white transition-colors duration-300">
         Phyrux
       </span>
     </div>

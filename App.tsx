@@ -16,7 +16,7 @@ const Contact = lazy(() => import('./pages/Contact'));
 
 const PageLoader: React.FC = () => (
   <div className="flex items-center justify-center w-full min-h-[calc(100vh-200px)]">
-    <div className="w-12 h-12 border-4 border-brand-blue border-t-brand-dark rounded-full animate-spin"></div>
+    <div className="w-12 h-12 border-4 border-brand-blue border-t-transparent rounded-full animate-spin"></div>
   </div>
 );
 
@@ -24,7 +24,7 @@ const App: React.FC = () => {
   const location = useLocation();
 
   return (
-    <div className="min-h-screen bg-brand-dark flex flex-col">
+    <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-grow">
         <Suspense fallback={<PageLoader />}>

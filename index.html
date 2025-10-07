@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
+        darkMode: 'class',
         theme: {
           extend: {
             colors: {
@@ -83,6 +84,14 @@
 }
 </script>
 <style>
+  :root {
+    --grid-color: rgba(30, 30, 30, 0.08);
+    --scanline-color: rgba(0, 0, 0, 0.02);
+  }
+  .dark {
+    --grid-color: rgba(209, 213, 219, 0.05);
+    --scanline-color: rgba(255, 255, 255, 0.03);
+  }
   body::before {
     content: '';
     position: fixed;
@@ -91,8 +100,8 @@
     width: 100%;
     height: 100%;
     background-image:
-      linear-gradient(to right, rgba(209, 213, 219, 0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(209, 213, 219, 0.05) 1px, transparent 1px);
+      linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
     background-size: 3rem 3rem;
     z-index: -1;
     pointer-events: none;
@@ -104,7 +113,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: repeating-linear-gradient(0deg, rgba(0,0,0,0) 0, rgba(255, 255, 255, 0.03) 1px, rgba(0,0,0,0) 2px);
+    background: repeating-linear-gradient(0deg, rgba(0,0,0,0) 0, var(--scanline-color) 1px, rgba(0,0,0,0) 2px);
     animation: scan 20s linear infinite;
     z-index: 10;
     pointer-events: none;
@@ -116,7 +125,7 @@
   }
 </style>
 </head>
-<body class="bg-brand-dark text-brand-light font-sans overflow-x-hidden">
+<body class="bg-white dark:bg-brand-dark text-brand-dark dark:text-brand-light font-sans overflow-x-hidden transition-colors duration-300">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
 </body>

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import AnimatedPage from '../components/AnimatedPage';
 import { TIMELINE_EVENTS } from '../constants';
@@ -18,13 +17,13 @@ const About: React.FC = () => {
           className="text-center mb-16"
         >
           <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter">Our Story</h1>
-          <p className="mt-4 max-w-3xl mx-auto text-brand-light/70">
+          <p className="mt-4 max-w-3xl mx-auto text-brand-dark/70 dark:text-brand-light/70">
             Born from a shared passion for gaming culture and cutting-edge design, Phyrux Commissions is more than a studio—it's an arsenal of creativity. We arm brands with the visual power to dominate their digital landscapes.
           </p>
         </motion.div>
 
         <div className="relative max-w-3xl mx-auto">
-            <div className="absolute left-1/2 top-0 h-full w-0.5 bg-brand-gray/50 transform -translate-x-1/2"></div>
+            <div className="absolute left-1/2 top-0 h-full w-0.5 bg-gray-300 dark:bg-brand-gray/50 transform -translate-x-1/2"></div>
             {TIMELINE_EVENTS.map((event, index) => (
                 <TimelineItem key={index} event={event} index={index} />
             ))}

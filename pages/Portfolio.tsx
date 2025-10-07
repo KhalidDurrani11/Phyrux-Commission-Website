@@ -1,4 +1,3 @@
-
 import React, { useState, useMemo } from 'react';
 import AnimatedPage from '../components/AnimatedPage';
 import { PORTFOLIO_ITEMS } from '../constants';
@@ -26,7 +25,7 @@ const Portfolio: React.FC = () => {
                     className="text-center mb-12"
                 >
                     <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter">Mission Archive</h1>
-                    <p className="mt-4 max-w-2xl mx-auto text-brand-light/70">A showcase of successfully executed operations and creative conquests.</p>
+                    <p className="mt-4 max-w-2xl mx-auto text-brand-dark/70 dark:text-brand-light/70">A showcase of successfully executed operations and creative conquests.</p>
                 </motion.div>
 
                 <div className="flex justify-center flex-wrap gap-2 md:gap-4 mb-12">
@@ -35,7 +34,10 @@ const Portfolio: React.FC = () => {
                             key={category}
                             onClick={() => setActiveFilter(category)}
                             className={`px-4 py-2 text-sm md:text-base font-mono uppercase tracking-widest border-2 rounded-sm transition-all duration-300
-                                ${activeFilter === category ? 'bg-brand-blue text-brand-dark border-brand-blue' : 'border-brand-gray/80 text-brand-light/70 hover:border-brand-blue hover:text-brand-blue'}
+                                ${activeFilter === category 
+                                    ? 'bg-brand-blue text-white dark:text-brand-dark border-brand-blue' 
+                                    : 'border-gray-300 text-brand-dark/70 hover:border-brand-blue hover:text-brand-blue dark:border-brand-gray/80 dark:text-brand-light/70'
+                                }
                             `}
                         >
                             {category}
