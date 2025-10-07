@@ -1,11 +1,11 @@
 
 import React from 'react';
-import type { PortfolioItem } from '../types';
+import type { PortfolioItem as PortfolioItemType } from '../types';
 
 // Fix: Replaced global motion with import
 import { motion } from 'framer-motion';
 
-const PortfolioItem: React.FC<{ item: PortfolioItem }> = ({ item }) => {
+const PortfolioItem: React.FC<{ item: PortfolioItemType }> = ({ item }) => {
     return (
         <motion.div
             layout
@@ -15,7 +15,13 @@ const PortfolioItem: React.FC<{ item: PortfolioItem }> = ({ item }) => {
             transition={{ duration: 0.4 }}
             className="group relative aspect-w-4 aspect-h-3 rounded-lg overflow-hidden shadow-lg cursor-pointer"
         >
-            <img src={item.imageUrl} alt={item.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+            <img 
+                src={item.imageUrl} 
+                alt={item.title} 
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                loading="lazy"
+                decoding="async"
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
             <div className="absolute bottom-0 left-0 p-4 w-full">
                 <motion.div 
@@ -31,4 +37,4 @@ const PortfolioItem: React.FC<{ item: PortfolioItem }> = ({ item }) => {
     );
 };
 
-export default PortfolioItem;
+export default React.memo(PortfolioItem);

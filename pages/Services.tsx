@@ -3,9 +3,12 @@ import React from 'react';
 import AnimatedPage from '../components/AnimatedPage';
 import { SERVICES } from '../constants';
 import ServiceCard from '../components/ServiceCard';
+import { Link } from 'react-router-dom';
 
 // Fix: Replaced global motion with import
 import { motion } from 'framer-motion';
+
+const slugify = (text: string) => text.toLowerCase().replace(/\s+/g, '-');
 
 const Services: React.FC = () => {
   return (
@@ -28,7 +31,9 @@ const Services: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <ServiceCard service={service} />
+              <Link to={`/services/${slugify(service.title)}`} className="block h-full">
+                <ServiceCard service={service} />
+              </Link>
             </motion.div>
           ))}
         </div>

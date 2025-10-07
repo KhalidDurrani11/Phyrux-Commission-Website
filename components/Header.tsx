@@ -17,7 +17,7 @@ const navLinks = [
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const linkClasses = "relative font-mono uppercase tracking-widest text-sm text-gray-300 hover:text-brand-blue transition-colors duration-300";
+  const linkClasses = "relative font-mono uppercase tracking-widest text-sm text-gray-300 hover:text-brand-blue transition-colors duration-300 px-2 py-1";
   const activeLinkClasses = "text-brand-blue";
 
   return (
@@ -26,7 +26,7 @@ const Header: React.FC = () => {
         <NavLink to="/">
             <Logo />
         </NavLink>
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center space-x-6">
           {navLinks.map((link) => (
             <NavLink
               key={link.name}
@@ -34,16 +34,31 @@ const Header: React.FC = () => {
               className={({ isActive }) => `${linkClasses} ${isActive ? activeLinkClasses : ''}`}
             >
               {({ isActive }) => (
-                <>
+                <span className="relative">
+                  {isActive && (
+                    <motion.span
+                      layoutId="nav-bracket-left"
+                      className="absolute -left-2 top-0 bottom-0 text-brand-blue"
+                      initial={{ opacity: 0, x: 5 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: 5 }}
+                    >
+                      [
+                    </motion.span>
+                  )}
                   {link.name}
                   {isActive && (
-                    <motion.div
-                      className="absolute -bottom-2 left-0 right-0 h-0.5 bg-brand-blue"
-                      layoutId="underline"
-                      transition={{ type: 'spring', stiffness: 500, damping: 30 }}
-                    />
+                    <motion.span
+                      layoutId="nav-bracket-right"
+                      className="absolute -right-2 top-0 bottom-0 text-brand-blue"
+                      initial={{ opacity: 0, x: -5 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -5 }}
+                    >
+                      ]
+                    </motion.span>
                   )}
-                </>
+                </span>
               )}
             </NavLink>
           ))}

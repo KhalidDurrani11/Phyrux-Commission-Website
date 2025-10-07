@@ -1,18 +1,24 @@
-
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
-
-// Page components
-import Home from './pages/Home';
-import About from './pages/About';
-import Services from './pages/Services';
-import Portfolio from './pages/Portfolio';
-import Contact from './pages/Contact';
 
 // Fix: Replaced global ReactRouterDOM and motion with imports
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
+
+// Lazy-loaded page components
+const Home = lazy(() => import('./pages/Home'));
+const About = lazy(() => import('./pages/About'));
+const Services = lazy(() => import('./pages/Services'));
+const ServiceDetail = lazy(() => import('./pages/ServiceDetail'));
+const Portfolio = lazy(() => import('./pages/Portfolio'));
+const Contact = lazy(() => import('./pages/Contact'));
+
+const PageLoader: React.FC = () => (
+  <div className="flex items-center justify-center w-full min-h-[calc(100vh-200px)]">
+    <div className="w-12 h-12 border-4 border-brand-blue border-t-brand-dark rounded-full animate-spin"></div>
+  </div>
+);
 
 const App: React.FC = () => {
   const location = useLocation();
@@ -21,15 +27,18 @@ const App: React.FC = () => {
     <div className="min-h-screen bg-brand-dark flex flex-col">
       <Header />
       <main className="flex-grow">
-        <AnimatePresence mode="wait">
-          <Routes location={location} key={location.pathname}>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </AnimatePresence>
+        <Suspense fallback={<PageLoader />}>
+          <AnimatePresence mode="wait">
+            <Routes location={location} key={location.pathname}>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/services/:serviceSlug" element={<ServiceDetail />} />
+              <Route path="/portfolio" element={<Portfolio />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </AnimatePresence>
+        </Suspense>
       </main>
       <Footer />
     </div>
