@@ -73,28 +73,7 @@ const Typewriter: React.FC<{ text: string; delay: number }> = ({ text, delay }) 
 
 
 const Home: React.FC = () => {
-  const [isGlitching, setIsGlitching] = useState(false);
   const featuredServices = SERVICES.slice(0, 3);
-
-  const GlitchText: React.FC<{ children: string }> = ({ children }) => {
-      const text = children;
-      return (
-          <span onMouseEnter={() => setIsGlitching(true)} onMouseLeave={() => setIsGlitching(false)} className="relative inline-block cursor-pointer">
-              {text.split("").map((char, index) => (
-                <motion.span key={`char-${index}`} variants={letterVariants} className="inline-block relative">
-                    {char}
-                </motion.span>
-              ))}
-              {isGlitching && (
-                  <>
-                      <span aria-hidden="true" className="absolute top-0 left-0 w-full h-full text-brand-red animate-glitch" style={{ textShadow: '0 0 5px red' }}>{text}</span>
-                      <span aria-hidden="true" className="absolute top-0 left-0 w-full h-full text-brand-blue animate-glitch" style={{ animationDelay: '0.2s' }}>{text}</span>
-                  </>
-              )}
-          </span>
-      );
-  };
-
 
   return (
     <AnimatedPage>
@@ -123,7 +102,13 @@ const Home: React.FC = () => {
             aria-label="Phyrux Commissions"
             className="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter text-gray-100 leading-tight mb-4 flex flex-wrap justify-center gap-x-2 md:gap-x-4"
           >
-            <span className="animate-glow-red"><GlitchText>Phyrux</GlitchText></span>
+            <span className="animate-glow-red">
+                {"Phyrux".split("").map((char, index) => (
+                    <motion.span key={`phyrux-${index}`} variants={letterVariants} className="inline-block">
+                        {char}
+                    </motion.span>
+                ))}
+            </span>
             <span>
                 {"Commissions".split("").map((char, index) => (
                   <motion.span key={`comm-${index}`} variants={letterVariants} className="inline-block">
